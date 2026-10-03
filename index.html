@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Erin Anderson</title>
+
   <meta
     name="description"
     content="Erin Anderson — health AI product leader and occasional wedding officiant."
@@ -22,9 +23,14 @@
       box-sizing: border-box;
     }
 
+    html,
     body {
       margin: 0;
-      min-height: 100vh;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
       background: var(--background);
       color: var(--text);
       font-family:
@@ -38,25 +44,19 @@
     }
 
     main {
-      min-height: 100vh;
+      width: 100%;
       max-width: 1100px;
+      height: 100vh;
+      height: 100svh;
       margin: 0 auto;
       padding: 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .top {
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--muted);
-      max-width: 520px;
+      display: grid;
+      grid-template-rows: 1fr auto;
     }
 
     .content {
+      align-self: center;
       max-width: 900px;
-      padding: 80px 0;
     }
 
     h1 {
@@ -112,55 +112,75 @@
         padding: 24px 20px;
       }
 
-      .content {
-        padding: 48px 0;
-      }
-
       h1 {
-        font-size: clamp(56px, 18vw, 82px);
-        margin-bottom: 24px;
+        margin-bottom: 22px;
+        font-size: clamp(52px, 17vw, 76px);
+        line-height: 0.9;
       }
 
       .intro {
-        font-size: 27px;
+        font-size: clamp(23px, 7vw, 28px);
         line-height: 1.12;
       }
 
       .intro + .intro {
-        margin-top: 22px;
+        margin-top: 20px;
       }
 
       footer {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
+        gap: 10px;
+        font-size: 13px;
+      }
+
+      .linkedin {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-height: 650px) {
+      main {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      h1 {
+        font-size: clamp(48px, 11vh, 82px);
+        margin-bottom: 18px;
+      }
+
+      .intro {
+        font-size: clamp(20px, 4.5vh, 30px);
+      }
+
+      .intro + .intro {
+        margin-top: 16px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <main>
-    <div class="top">
-      This website exists mostly because my email address has a website in it,
-      and I figured eventually someone would look.
-    </div>
 
     <section class="content">
+
       <h1>Hi, I’m Erin.</h1>
 
       <p class="intro">
         I lead product on <strong>PC Chat for health</strong> and spend most of
-        my working hours figuring out how AI can make healthcare simpler, more
-        useful, and less annoying for Canadians.
+        my working hours figuring out how AI can make healthcare simpler,
+        more useful, and less annoying for Canadians.
       </p>
 
       <p class="intro secondary">
         In my free time, I officiate weddings. So technically, Rev. Erin.
       </p>
+
     </section>
 
     <footer>
+
       <a
         class="linkedin"
         href="https://www.linkedin.com/in/toronto-erinanderson"
@@ -173,7 +193,10 @@
       <div class="fine-print">
         That’s the whole website.
       </div>
+
     </footer>
+
   </main>
+
 </body>
 </html>
